@@ -50,7 +50,7 @@ print(type(dpls))
 #fig, axes = plt.subplots(2, 1, sharex=True, figsize=(6, 6))
 idx = 0
 for dpl in dpls:
-	np.savetxt('/home/ntolley/Jones_Lab/hnn_test_dataset/hnn_out/dpl{}.csv'.format(idx),dpl.dpl['agg'])	
+	np.savetxt('/home/ntolley/Jones_Lab/template_hnn_local/hnn_out/dpl{}.csv'.format(idx),dpl.dpl['agg'])	
 	idx+=1
 
 
