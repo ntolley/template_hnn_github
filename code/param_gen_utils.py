@@ -4,16 +4,12 @@ from scipy.signal import decimate
 from scipy import interpolate
 import h5py
 import pandas as pd
-import icsd
-import neo
-import quantities as pq
 import os
 from os.path import isfile, join
 from os import listdir
 import networkx as nx
 import matplotlib.pyplot as plt
 import seaborn as sns
-import cv2
 import os
 sns.set()
 
