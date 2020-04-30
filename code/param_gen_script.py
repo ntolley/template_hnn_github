@@ -25,7 +25,6 @@ p_array = p.copy()
 
 #Glob search for specific keys
 sweep_params = [key for key in list(p.keys()) if fnmatch.fnmatch(key,'*gbar_ev*') and fnmatch.fnmatch(key,'*ampa*') and fnmatch.fnmatch(key,'*Pyr*')] 
-
 #Update array dict and unpack into a list of each permutation
 for s in sweep_params:
     p_array[s] = np.linspace(0,50,4)
@@ -34,25 +33,24 @@ p_array_unpacked = param_gen_utils.dict_expand(p_array)
 
 #Unload parameters into directory
 dir_name = 'gbarEvPyrAmpa_sweep'
-file_dir = os.path.abspath('param/{}'.format(dir_name) + '/')
+file_dir = os.path.abspath('param/{}'.format(dir_name))
 
-if not os.path.exists(file_dir):
-    os.mkdir(file_dir)
+os.mkdir(file_dir)
 
-    count = 0
-    for param_file in p_array_unpacked:
-        temp_dict = param_file.copy()
-        
-        f_name = dir_name + str(count)
+count = 0
+for param_file in p_array_unpacked:
+    temp_dict = param_file.copy()
+    
+    f_name = dir_name + str(count)
 
-        #Edit dictionary names
-        temp_dict['sim_prefix'] = f_name
-        temp_dict['expmt_groups'] = '{' + f_name + '}'
+    #Edit dictionary names
+    temp_dict['sim_prefix'] = f_name
+    temp_dict['expmt_groups'] = '{' + f_name + '}'
 
-        f_string= file_dir + f_name + '.param'
-        #Create files
-        paramrw.write(f_string,temp_dict,gid_dict)
+    f_string= file_dir + '/' + f_name + '.param'
+    #Create files
+    paramrw.write(f_string,temp_dict,gid_dict)
 
-        count += 1
+    count += 1
 
 
