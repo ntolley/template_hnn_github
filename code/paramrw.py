@@ -5,7 +5,7 @@
 # last major: (SL: cleanup of self.p_all)
 
 import re
-from param_functions import fileio as fio
+import fileio as fio
 import numpy as np
 import itertools as it
 # from cartesian import cartesian

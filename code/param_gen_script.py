@@ -1,6 +1,6 @@
 import numpy as np
 import os
-from param_functions import fileio, paramrw, params_default, param_gen_utils
+import fileio, paramrw, params_default, param_gen_utils
 import fnmatch
 import datalad
 from pathlib import Path
