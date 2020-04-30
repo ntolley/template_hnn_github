@@ -6,7 +6,7 @@ import datalad
 from pathlib import Path
 
 #Define template param file
-base_param_path = os.path.abspath('../param/standard_params/18oct24_17nov13_jyrki_good_3trials_opt.param')
+base_param_path = os.path.abspath('param/standard_params/18oct24_17nov13_jyrki_good_3trials_opt.param')
 gid_dict, p = paramrw.read(base_param_path) 
 
 #Random number generator inputs need to be ints, HNN won't recognize as floats
@@ -34,7 +34,7 @@ p_array_unpacked = param_gen_utils.dict_expand(p_array)
 
 #Unload parameters into directory
 dir_name = 'gbarEvPyrAmpa_sweep'
-file_dir = os.path.abspath('../param/{}'.format(dir_name) + '/')
+file_dir = os.path.abspath('param/{}'.format(dir_name) + '/')
 
 if not os.path.exists(file_dir):
     os.mkdir(file_dir)
