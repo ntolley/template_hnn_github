@@ -7,7 +7,7 @@
 import datetime, fnmatch, os, shutil, sys
 import subprocess, multiprocessing
 import numpy as np
-import paramrw
+from param_functions import paramrw
 
 # creates data dirs and a dictionary of useful types
 # self.dfig is a dictionary of experiments, which is each a dictionary of data type

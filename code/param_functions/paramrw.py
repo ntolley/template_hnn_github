@@ -5,11 +5,11 @@
 # last major: (SL: cleanup of self.p_all)
 
 import re
-import fileio as fio
+from param_functions import fileio as fio
 import numpy as np
 import itertools as it
 # from cartesian import cartesian
-from params_default import get_params_default
+from param_functions.params_default import get_params_default
 
 # get dict of ':' separated params from fn; ignore lines starting with #
 def quickreadprm (fn):
