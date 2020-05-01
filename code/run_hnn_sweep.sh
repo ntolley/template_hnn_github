@@ -13,7 +13,7 @@ export SYSTEM_USER_DIR=$PWD/data/$HNN_SWEEP_NAME
 
 for pfile in "${PARAM_NAMES[@]}"
     do
-        mpiexec -np 16 nrniv -mpi -python -nobanner run.py $PARAM_PATH/$pfile hnn_sweep.cfg
+        mpiexec -np 16 nrniv -mpi -python -nobanner run.py $PARAM_PATH/$pfile
     done
 
 
