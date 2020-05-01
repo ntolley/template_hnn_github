@@ -5,7 +5,7 @@ export HNN_SWEEP_NAME=gbarEvPyrAmpa_sweep
 
 
 export PARAM_PATH=$PWD/param/$HNN_SWEEP_NAME
-export PARAM_NAMES=(`ls $PARAM_PATH`)
+export PARAM_NAMES=(echo ls $PARAM_PATH)
 
 #Setup location for hnn_out
 mkdir data/$HNN_SWEEP_NAME
