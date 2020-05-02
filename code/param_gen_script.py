@@ -24,10 +24,10 @@ p_array = p.copy()
 
 
 #Glob search for specific keys
-sweep_params = [key for key in list(p.keys()) if fnmatch.fnmatch(key,'*gbar_ev*') and fnmatch.fnmatch(key,'*ampa*') and fnmatch.fnmatch(key,'*Pyr*')] 
+sweep_params = [key for key in list(p.keys()) if fnmatch.fnmatch(key,'*gbar_ev*1*Pyr*ampa')] 
 #Update array dict and unpack into a list of each permutation
 for s in sweep_params:
-    p_array[s] = np.linspace(0,50,4)
+    p_array[s] = np.linspace(0,50,3)
 
 p_array_unpacked = param_gen_utils.dict_expand(p_array)
 
