@@ -351,13 +351,13 @@ def epscompress (dfig_spk, fext_figspk, local=0):
 def safemkdir (dn):
   try:
     os.mkdir(dn)
-    return True
+  except FileExistsError:
+    pass
   except OSError:
-    if not os.path.exists(dn):
-      print('ERR: could not create', dn)
-      return False
-    else:
-      return True
+    print('ERR: incorrect permissions for creating', dn)
+    return False
+
+  return True
 
 # returns the data dir
 def return_data_dir ():
