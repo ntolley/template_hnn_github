@@ -490,12 +490,12 @@ def write(fparam, p, gid_list):
   # p_sorted.sort(key=lambda x: x[0])
   # open the file for writing
   with open(fparam, 'w') as f:
-    pstring = '%26s: '
+    pstring = '%s: '
     # write the gid info first
     for key in gid_list.keys():
       f.write(pstring % key)
       if len(gid_list[key]):
-        f.write('[%4i, %4i] ' % (gid_list[key][0], gid_list[key][-1]))
+        f.write('[%i, %i] ' % (gid_list[key][0], gid_list[key][-1]))
       else:
         f.write('[]')
       f.write('\n')
