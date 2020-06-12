@@ -6,7 +6,7 @@ import datalad
 from pathlib import Path
 
 #Define template param file
-base_param_path = os.path.abspath('param/standard_params/18oct24_17nov13_jyrki_good_3trials_opt.param')
+base_param_path = os.path.abspath('param/standard_params/jyrki_good_3trials_opt_flipped_input.param')
 gid_dict, p = paramrw.read(base_param_path) 
 
 #Random number generator inputs need to be ints, HNN won't recognize as floats
@@ -22,7 +22,6 @@ p['prng_seedcore_evdist_2'] = 0
 # Store arrays off parameters to sweep over
 p_array = p.copy() 
 
-
 #Glob search for specific keys
 sweep_params = [key for key in list(p.keys()) if fnmatch.fnmatch(key,'*gbar_ev*1*Pyr*ampa')] 
 #Update array dict and unpack into a list of each permutation
@@ -32,7 +31,7 @@ for s in sweep_params:
 p_array_unpacked = param_gen_utils.dict_expand(p_array)
 
 #Unload parameters into directory
-dir_name = 'gbarEvPyrAmpa_sweep'
+dir_name = 'gbarEvPyrAmpa_reversed_inputs'
 file_dir = os.path.abspath('param/{}'.format(dir_name))
 
 os.mkdir(file_dir)
