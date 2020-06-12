@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Identify folder with .param files to iterate over
-export HNN_SWEEP_NAME=gbarEvPyrAmpa_sweep
+export HNN_SWEEP_NAME=gbarEvPyrAmpa_reversed_inputs
 
 export PARAM_PATH=$PWD/param/$HNN_SWEEP_NAME
 
